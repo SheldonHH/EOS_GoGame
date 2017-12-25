@@ -1,0 +1,23 @@
+{
+  "name": "uint64",
+  "checksum": "fixed_bytes32",
+  "signature": "fixed_bytes65",
+  "public_key": "fixed_bytes33",
+  "message_type": "fixed_string16",
+  "asset_symbol": "uint64",
+  "share_type": "int64",
+  "field_name": "string",
+  "asset": {
+    "fields": {
+      "amount": "share_type",
+      "symbol": "asset_symbol"
+    }
+  },
+  "struct_t": {
+    "fields": {
+      "name": "type_name",
+      "base": "type_name",
+      "fields": "map<field_name, type_name>"
+    }
+  }
+}
