@@ -1,0 +1,223 @@
+{
+  "types": [
+    {
+      "new_type_name": "account_name",
+      "type": "name"
+    }
+  ],
+  "structs": [
+    {
+      "name": "dianpress",
+      "base": "",
+      "fields": {
+        "matchid": "uint64",
+        "pos": "uint8[]",
+        "player": "account_name",
+        "host": "account_name"
+      }
+    },
+    {
+      "name": "judgewin",
+      "base": "",
+      "fields": {
+        "matchid": "uint64",
+        "pos": "uint8[]",
+        "player": "account_name",
+        "host": "account_name"
+      }
+    },
+    {
+      "name": "movepiece",
+      "base": "",
+      "fields": {
+        "matchid": "uint64",
+        "steps": "uint8[]",
+        "player": "account_name",
+        "host": "account_name"
+      }
+    },
+    {
+          "name": "quitgame",
+          "base": "",
+          "fields": {
+            "matchid": "uint64",
+            "player": "account_name",
+            "opponent": "account_name"
+          }
+     },
+    {
+      "name": "castling",
+      "base": "",
+      "fields": {
+        "matchid": "uint64",
+        "type": "uint8",
+        "player": "account_name",
+        "host": "account_name"
+      }
+    },
+    {
+      "name": "acceptmatch",
+      "base": "",
+      "fields": {
+        "player": "account_name",
+        "opponent": "account_name"
+      }
+    },
+    {
+      "name": "declinematch",
+      "base": "",
+      "fields": {
+        "player": "account_name",
+        "opponent": "account_name"
+      }
+    },
+    {
+      "name": "claimwin",
+      "base": "",
+      "fields": {
+        "matchid": "uint64",
+        "player": "account_name",
+        "host": "account_name"
+      }
+    },
+    {
+      "name": "matchmaking",
+      "base": "",
+      "fields": {
+        "player": "account_name",
+        "status": "uint8"
+      }
+    },
+    {
+      "name": "newmatch",
+      "base": "",
+      "fields": {
+        "player": "account_name",
+        "side": "uint8",
+        "opponent": "account_name",
+        "maxmoveinterval": "uint32"
+      }
+    },
+    {
+      "name": "match",
+      "fields": {
+        "matchid": "uint64",
+        "opponent": "account_name",
+        "white": "account_name",
+        "black": "account_name",
+        "status": "uint8",
+        "lastmoveside": "uint8",
+        "moveswhite": "uint64",
+        "movesblack": "uint64",
+        "matchstart": "uint32",
+        "check": "uint8",
+        "kings": "uint8[]",
+        "board": "uint8[]",
+        "lastmove": "uint8[]",
+        "lastmovetime": "uint32",
+        "maxmoveinterval": "uint32",
+        "castling": "uint8[]"
+      }
+    },
+    {
+      "name": "matchrequest",
+      "fields": {
+        "opponent": "account_name",
+        "matchid": "uint64",
+        "opponentside": "uint8",
+        "maxmoveinterval": "uint32",
+        "lastmovetime": "uint32",
+        "status": "uint8",
+        "matchstart": "uint32"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "action_name": "dianpress",
+      "type": "dianpress"
+    },
+    {
+      "action_name": "judgewin",
+      "type": "judgewin"
+    },
+    {
+      "action_name": "movepiece",
+      "type": "movepiece"
+    },
+    {
+      "action_name": "quitgame",
+      "type": "quitgame"
+    },
+    {
+      "action_name": "newmatch",
+      "type": "newmatch"
+    },
+    {
+      "action_name": "acceptmatch",
+      "type": "acceptmatch"
+    },
+    {
+      "action_name": "declinematch",
+      "type": "acceptmatch"
+    },
+    {
+      "action_name": "claimwin",
+      "type": "claimwin"
+    },
+    {
+      "action_name": "matchmaking",
+      "type": "matchmaking"
+    },
+    {
+      "action_name": "castling",
+      "type": "castling"
+    }
+  ],
+  "tables": [
+    {
+      "table_name": "matches",
+      "type": "match",
+      "index_type": "i64",
+      "key_names": [
+        "matchid"
+      ],
+      "key_types": [
+        "uint64"
+      ]
+    },
+    {
+      "table_name": "requests",
+      "type": "matchrequest",
+      "index_type": "i64",
+      "key_names": [
+        "opponent"
+      ],
+      "key_types": [
+        "account_name"
+      ]
+    },
+    {
+      "table_name": "requested",
+      "type": "matchrequest",
+      "index_type": "i64",
+      "key_names": [
+        "opponent"
+      ],
+      "key_types": [
+        "account_name"
+      ]
+    },
+    {
+      "table_name": "matchmaking",
+      "type": "matchmaking",
+      "index_type": "i64",
+      "key_names": [
+        "player"
+      ],
+      "key_types": [
+        "account_name"
+      ]
+    }
+  ]
+}
