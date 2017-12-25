@@ -1,21 +1,8 @@
-# eoschess-ui
 
-> ui for eoschess
 
-## Build Setup
+## Single-testnet Test
+- Change all `code` in both [wuziqi.cpp](https://github.com/SheldonHH/EOSwuziqi/blob/master/Gobang_contract/wuziqi.cpp) and [wuziqi.hpp](https://github.com/SheldonHH/EOSwuziqi/blob/master/Gobang_contract/wuziqi.hpp) to your own account name and upload to single-tesnet.
 
-``` bash
-# install dependencies
-npm install
+## Public-testnet Test
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+- Currently the public-testnet is under maintainence, the contract will be upload after recover.
